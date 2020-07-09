@@ -25,6 +25,7 @@ $(function () {
       $('.js-tab-content.active').removeClass('active').hide();
       content.addClass('active').fadeIn();
     });
+
     $('.calculator-tab').click(function() {
       var id = $(this).attr('data-tab'),
           content = $('.calculator-tab-item[data-tab="'+ id +'"]');
@@ -52,7 +53,27 @@ $(function () {
       dots: false,
       arrows: false,
       centerMode: false,
-      focusOnSelect: true
+      focusOnSelect: true,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 5,
+          }
+        },
+        {
+          breakpoint: 770,
+          settings: {
+            slidesToShow: 4,
+          }
+        },
+        {
+          breakpoint: 378,
+          settings: {
+            slidesToShow: 3,
+          }
+        },
+      ]
     });
     $('.main__item-slider').slick({
       slidesToShow: 1,
@@ -87,6 +108,11 @@ $(function () {
       variableWidth: true
     });
 
+    $('.navigation__user').on('click', function () {
+      $('.user__menu').toggleClass('show');
+      $('.menu-background, navigation__user').toggleClass('show');
+      $('.user-btn').toggleClass('activ');
+    });
 
     $('.navigation__menu-search').on('click', function () {
       $('.main__search-form').toggleClass('show');
@@ -97,6 +123,7 @@ $(function () {
       $('.advatages-slider').toggleClass('show');
       $('.main__items-link').toggleClass('rotate');
     });
+  
     $('.main__items-link').on('click', function () {
       $('.advatages-slider-adaptive').toggleClass('visible');
       $('.main__head').toggleClass('hide');
@@ -125,11 +152,6 @@ $(function () {
       $('.main__search-form').toggleClass('active');
     });
 
-
-    $('.nav-card').on('click', function () {
-      $(this).toggleClass('show');
-    });
-
   $('.reviews__item-like').on('click', function(){
     $(this).addClass('active');
     $('.reviews__item-dislike').removeClass('active');
@@ -146,8 +168,9 @@ $(function () {
 
   $(function() {
 
-    $('input[type=checkbox], select').styler({});
+    $('input[type=checkbox], select, input[type=file]').styler({});
   
   });
+  
    
   });
