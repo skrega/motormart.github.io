@@ -116,34 +116,35 @@ $(function () {
 
     $('.navigation__menu-search').on('click', function () {
       $('.main__search-form').toggleClass('show');
-      // $('.main__items-link').toggleClass('rotate');
     });
    
-    $('.main__items-link').on('click', function () {
+    $('.main__head').on('click', function () {
       $('.advatages-slider').toggleClass('show');
-      $('.main__items-link').toggleClass('rotate');
     });
-  
-    $('.main__items-link').on('click', function () {
+    $('.main__head').on('click', function () {
       $('.advatages-slider-adaptive').toggleClass('visible');
-      $('.main__head').toggleClass('hide');
       $('.main__items-link').toggleClass('rotate');
-    });
-    $('.main__items-link').on('click', function () {
-      $('.main__items-link').toggleClass('rotate');
-    });
-    
+    });  
     $('.advanced-search').on('click', function () {
-      $('.advanced-row').toggleClass('show');
-      $('.advanced-search').toggleClass('rotate');
+      $('.advanced-row').addClass('show');
+      $('.main__form-advanced').addClass('show');
+      $('.advanced-search').addClass('rotate');
+      $('.advanced-hide').addClass('show');
+      $('.advanced-hide').addClass('rotate');
     });
-
+    $('.advanced-search__hide').on('click', function () {
+      $('.advanced-row').removeClass('show');
+      $('.main__form-advanced').removeClass('show');
+      $('.advanced-search').Class('rotate');
+    });
     $('.btn-favorites').on('click', function () {
       $('.btn-favorites').toggleClass('active');
     });
 
-    $('.btn-comparison').on('click', function () {
-      $('.btn-comparison').toggleClass('active');
+    $('.advanced-hide').on('click', function () {
+      $('.advanced-row').removeClass('show');
+      $('.advanced-hide').removeClass('show');
+      $('.advanced-search').removeClass('rotate');
     });
 
 
