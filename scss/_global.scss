@@ -28,7 +28,7 @@ body{
     font-size: 0.8vw;
     line-height: 0.9vw;
     @extend %geometria;
-    background-color: #28282D;
+    background-color: #1E1E23;
     color: #fff;
 }
 a{
@@ -61,7 +61,7 @@ input{
     text-transform: uppercase;
     @extend %geometria-800;
     // font-size: 24px;
-    font-size: 1.2vw;
+    font-size: 1.3vw;
     letter-spacing: 2px;
     color: #1E1E23;
     position: relative;
@@ -79,7 +79,7 @@ input{
 .title{
     color: #1E1E23;
     //font-size: 24px;
-    font-size: 1.2vw;
+    font-size: 1.3vw;
     // line-height: 28px;
     line-height: 1.4vw;
     @extend %geometria-800;
