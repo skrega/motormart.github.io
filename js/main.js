@@ -107,7 +107,15 @@ $(function () {
       arrows: false,
       variableWidth: true
     });
-
+    $('.navigation__links-inner').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: false,
+      arrows: false,
+      autoplay: true,
+      speed: 200,
+      fade: true,
+    });
     $('.navigation__user').on('click', function () {
       $('.user__menu').toggleClass('show');
       $('.menu-background, navigation__user').toggleClass('show');
@@ -141,6 +149,7 @@ $(function () {
       $('.btn-favorites').toggleClass('active');
     });
 
+
     $('.advanced-hide').on('click', function () {
       $('.advanced-row').removeClass('show');
       $('.advanced-hide').removeClass('show');
@@ -167,11 +176,20 @@ $(function () {
     $('.reviews__items-more').toggleClass('show');
   });
 
+  $('.product-menu__link').on('click', function () {
+    $(this).addClass('active');
+  });
+
+
   $(function() {
 
     $('input[type=checkbox], select, input[type=file]').styler({});
   
   });
+
+  // const simpleBar = new SimpleBar(document.getElementById('product__main'));
+  // simpleBar.getScrollElement().addEventListener('scroll', function(){
   
-   
-  });
+  // });
+     
+});
