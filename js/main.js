@@ -98,7 +98,7 @@ $(function () {
       slidesToScroll: 1,
       dots: true,
       arrows: false,
-      variableWidth: true
+      variableWidth: true,
     });
     $('.advatages-slider-adaptive').slick({
       slidesToShow: 1,
@@ -191,5 +191,13 @@ $(function () {
   // simpleBar.getScrollElement().addEventListener('scroll', function(){
   
   // });
+
+  // window.onscroll = function() {
+  //   var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+  //   if(scrolled >= 80)
+  //     document.querySelector(".block-1").style.display = 'none';
+  //     document.querySelector(".block-2").style.display = 'none';
+  //     document.querySelector(".block-3").style.width = '100px';
+  // }
      
 });
