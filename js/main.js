@@ -113,7 +113,7 @@ $(function () {
       dots: false,
       arrows: false,
       autoplay: true,
-      speed: 200,
+      speed: 100,
       fade: true,
     });
     $('.navigation__user').on('click', function () {
