@@ -80,6 +80,7 @@ $(function () {
       slidesToScroll: 1,
       dots: false,
       arrows: false,
+      infinite: false,
       variableWidth: true,
       responsive: [
         {
@@ -99,8 +100,8 @@ $(function () {
       dots: true,
       arrows: false,
       variableWidth: true,
-      autoplay: true,
-      speed: 200
+      // autoplay: true,
+      // speed: 200
       //fade: true
     });
     $('.advatages-slider-adaptive').slick({
@@ -149,7 +150,11 @@ $(function () {
       $('.advanced-search').Class('rotate');
     });
     $('.btn-favorites').on('click', function () {
-      $('.btn-favorites').toggleClass('active');
+      $(this).toggleClass('active');
+    });
+
+    $('.btn-view').on('click', function () {
+      $(this).toggleClass('active');
     });
 
 
@@ -163,6 +168,8 @@ $(function () {
     $('.navigation__menu-button').on('click', function () {
       $('.navigation__menu-button').toggleClass('active');
       $('.main__search-form').toggleClass('active');
+      $('.navigation__menu__wrapper').toggleClass('active');
+      $('.main__items').toggleClass('hide');
     });
 
   $('.reviews__item-like').on('click', function(){
@@ -189,14 +196,23 @@ $(function () {
     $('input[type=checkbox], select, input[type=file]').styler({});
   
   });
-  $('.main__items-inner').scroll(function(){
-    var docscroll=$('.main__items-inner').scrollTop();
-    if(docscroll>$('.main__items-inner').height()){
-      $('.main__items').css({'height': $('.main__items').height(),'width': $('.main__items').width()}).addClass('fixed');
-    }else{
-      $('.main__items').removeClass('fixed');
-    }
-  });
+
+
+
+  // $('.main__item-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+  //   console.log(currentSlide); // индекс текущего слайда
+  // });
+
+  
+
+  // $('.main__items-inner').scroll(function(){
+  //   var docscroll=$('.main__items-inner').scrollTop();
+  //   if(docscroll>$('.main__items-inner').height()){
+  //     $('.main__items').css({'height': $('.main__items').height(),'width': $('.main__items').width()}).addClass('fixed');
+  //   }else{
+  //     $('.main__items').removeClass('fixed');
+  //   }
+  // });
   // $('.main__items-inner').scroll(function(){
   //   if($(this).scrollTop()>140){
   //       $('.main__items').addClass('fixed');
