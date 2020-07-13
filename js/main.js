@@ -99,8 +99,9 @@ $(function () {
       dots: true,
       arrows: false,
       variableWidth: true,
-      autoplay: true,
-      speed: 200
+      // autoplay: true,
+      // speed: 200
+      //fade: true
     });
     $('.advatages-slider-adaptive').slick({
       slidesToShow: 1,
