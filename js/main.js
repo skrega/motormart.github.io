@@ -99,6 +99,8 @@ $(function () {
       dots: true,
       arrows: false,
       variableWidth: true,
+      autoplay: true,
+      speed: 200
     });
     $('.advatages-slider-adaptive').slick({
       slidesToShow: 1,
@@ -186,6 +188,22 @@ $(function () {
     $('input[type=checkbox], select, input[type=file]').styler({});
   
   });
+  $('.main__items-inner').scroll(function(){
+    var docscroll=$('.main__items-inner').scrollTop();
+    if(docscroll>$('.main__items-inner').height()){
+      $('.main__items').css({'height': $('.main__items').height(),'width': $('.main__items').width()}).addClass('fixed');
+    }else{
+      $('.main__items').removeClass('fixed');
+    }
+  });
+  // $('.main__items-inner').scroll(function(){
+  //   if($(this).scrollTop()>140){
+  //       $('.main__items').addClass('fixed');
+  //   }
+  //   else if ($(this).scrollTop()<140){
+  //       $('.main__items').removeClass('fixed');
+  //   }
+  // });
 
   // const simpleBar = new SimpleBar(document.getElementById('product__main'));
   // simpleBar.getScrollElement().addEventListener('scroll', function(){
