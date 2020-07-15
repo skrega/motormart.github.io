@@ -6,24 +6,10 @@ $(function () {
         readOnly: true
     });
 
-    // $('.product__tabs .tab, .finance__tabs, .tab').on('click', function (event) {
-    //   var id = $(this).attr('data-id');
-    //   $('.product__tabs, .finance__tabs').find('.tab-item').removeClass('active-tab').hide();
-    //   $('.product__tabs .tabs, .finance__tabs, .tabs').find('.tab').removeClass('active');
-    //   $(this).addClass('active');
-    //   $('#' + id).addClass('active-tab').fadeIn();
-    //   return false;
-    // });
-
-
-    $('.product__tabs .tab').on('click', function (event) {
-      var id = $(this).attr('data-id');
-      $('.tab_content').find('.tab-item').removeClass('active-tab').hide();
-      $('.product__tabs .tabs').find('.tab').removeClass('active');
-      $(this).addClass('active');
-      $('#' + id).addClass('active-tab').fadeIn();
-      return false;
-    });
+    $(".product__tabs .tab").click(function() {
+      $(".product__tabs .tab").removeClass("active").eq($(this).index()).addClass("active");
+      $(".tab-item").hide().eq($(this).index()).fadeIn()
+    }).eq(1).addClass("active");
 
     $('.js-tab-trigger').click(function() {
       var id = $(this).attr('data-tab'),
@@ -51,8 +37,9 @@ $(function () {
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: false,
-      fade: true,
+      fade: false,
       dots: true,
+      variableWidth: true,
       asNavFor: '.tab__slider-nav'
     });
 
@@ -64,6 +51,7 @@ $(function () {
       arrows: false,
       centerMode: false,
       focusOnSelect: true,
+      variableWidth: true,
       responsive: [
         {
           breakpoint: 1024,
