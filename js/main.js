@@ -6,10 +6,20 @@ $(function () {
         readOnly: true
     });
 
-    $('.product__tabs .tab, .finance__tabs, .tab').on('click', function (event) {
+    // $('.product__tabs .tab, .finance__tabs, .tab').on('click', function (event) {
+    //   var id = $(this).attr('data-id');
+    //   $('.product__tabs, .finance__tabs').find('.tab-item').removeClass('active-tab').hide();
+    //   $('.product__tabs .tabs, .finance__tabs, .tabs').find('.tab').removeClass('active');
+    //   $(this).addClass('active');
+    //   $('#' + id).addClass('active-tab').fadeIn();
+    //   return false;
+    // });
+
+
+    $('.product__tabs .tab').on('click', function (event) {
       var id = $(this).attr('data-id');
-      $('.product__tabs, .finance__tabs').find('.tab-item').removeClass('active-tab').hide();
-      $('.product__tabs .tabs, .finance__tabs, .tabs').find('.tab').removeClass('active');
+      $('.tab_content').find('.tab-item').removeClass('active-tab').hide();
+      $('.product__tabs .tabs').find('.tab').removeClass('active');
       $(this).addClass('active');
       $('#' + id).addClass('active-tab').fadeIn();
       return false;
@@ -93,21 +103,15 @@ $(function () {
         },
       ]
     });
-
-
     
-
-
     $('.advatages-slider').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       dots: true,
       arrows: false,
       variableWidth: true,
-      // autoplay: true,
-      // speed: 200
-      //fade: true
-      
+      autoplay: true,
+      speed: 200,      
     });
 
     $('.advatages-slider-adaptive').slick({
@@ -115,7 +119,9 @@ $(function () {
       slidesToScroll: 1,
       dots: true,
       arrows: false,
-      variableWidth: true
+      variableWidth: true,
+      autoplay: true,
+      speed: 200,
     });
     $('.navigation__links-inner').slick({
       slidesToShow: 1,
@@ -124,7 +130,7 @@ $(function () {
       arrows: false,
       autoplay: true,
       speed: 100,
-      fade: true,
+      fade: true
     });
     $('.navigation__user').on('click', function () {
       $('.user__menu').toggleClass('show');
@@ -143,13 +149,19 @@ $(function () {
           $('#main-advatages__item').hide(500);
         }, 2000);
       });
-
+      
       $('#main-advatages__item').css({'display' : 'flex'});
 
     });
+
     $('.main__head').on('click', function () {
       $('.advatages-slider-adaptive').toggleClass('visible');
       $('.main__items-link').toggleClass('rotate');
+      $('#advatages__item-adaptive').show(1000, function(){
+        setTimeout(function(){
+          $('#advatages__item-adaptive').hide(500);
+        }, 2000);
+      });
     });  
 
     $('.advanced-search').on('click', function () {
